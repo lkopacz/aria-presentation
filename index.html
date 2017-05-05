@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Creating Accessible Rich Sites with Aria</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -31,16 +31,134 @@
 				</section>
 				<section>
 					<section>
-						<h1>What is ARIA?</h1>
+						<h2>What is ARIA?</h2>
 						<p>Accessible Rich Internet Applications (ARIA) defines ways to make Web content and Web applications (especially those developed with Ajax and JavaScript) more accessible to people with disabilities.</p>
 					</section>
 					<section>
-						<h1>Ok, What does that really mean?</h1>
+						<h2>Ok, What does that really mean?</h2>
 						<ul>
 							<li>This essentially helps web content to work better with assistive technologies.</li>
 							<li>This helps give more context to your content.</li>
 						</ul>
 					</section>
+					<section>
+						<h2>Question</h2>
+						<p>Have you gone to your favorite sites, closed your eyes, and turned on Voiceover (or other screenreaders)?</p>
+					</section>
+					<section>
+						<h2>If yes, another Question</h2>
+						<p>Were you irritated? Did you feel like you got the same context as you did as sighted people?</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>How can Aria Help?</h2>
+						<ul>
+							<li>Questions to ask:</li>
+							<ul>
+								<li>Are there hidden elements of my page that rely on Visual Cues to communicate Meaning?</li>
+								<li>Are there categories on a page that need context of what they are categorizing?</li>
+								<li>Are you forced to use <code>&lt;div&gt;'s</code> in your CMS?</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>Most frequently used Aria attributes.</p>
+						<span>Source: <a href="https://www.w3.org/TR/wai-aria/states_and_properties">W3C, Full List of Aria Attribuets</a></span>
+					</section>
+					<section>
+						<h2><code>role</code></h2>
+						<ul>
+							<li>Used to describe widgets or structure. Very important in presence of <code>&lt;div&gt;'s</code></li>
+							<li>Popular Values: <code>article, banner, button, form, main, navigation, region</code></li>
+							<li>Full list: <a href="https://www.w3.org/TR/wai-aria/roles#alert">W3 Aria Roles</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-checked</code></h2>
+						<ul>
+							<li>Indicates the current "checked" state of checkboxes, radio buttons, and other widgets.</li>
+							<li>Values: <code>true, false</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-describedby</code></h2>
+						<ul>
+							<li>Identifies the element (or elements) that describes the object.</li>
+							<li>Value: String that matches the id of the element used to describe it.</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-expanded</code></h2>
+						<ul>
+							<li>Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. Helpful for buttons that present sub items.</li>
+							<li>Values: <code>true, false</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-haspopup</code></h2>
+						<ul>
+							<li>Indicates that the element has a popup context menu or sub-level menu. Helps with menus that have submenu items that "pop up."</li>
+							<li>Values: <code>true, false</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-hidden</code></h2>
+						<ul>
+							<li>Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author. Helpful when there are items that impact styling, but have no semantic value.</li>
+							<li>Values: <code>true, false</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-label</code></h2>
+						<ul>
+							<li>Defines a string value that labels the current element.</li>
+							<li>Value: Any String that helps give better context to that element.</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-labeledby</code></h2>
+						<ul>
+							<li>Identifies the element (or elements) that describes the object.</li>
+							<li>Value: String that matches the id of the element used to label it.</li>
+						</ul>
+					</section>
+					<section>
+						<h2><code>aria-required</code></h2>
+						<ul>
+							<li>Indicates that user input is required on the element before a form may be submitted. Helpful particularly in HTML4 forms.</li>
+							<li>Values: <code>true, false</code></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Items to note: P1</h2>
+						<ul>
+							<li>HTML5 makes much better use of semantic HTML.</li>
+							<li>Aria can support HTML5, but if you can fix screenreader issues with semantic HTML, do it.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Items to note: P2</h2>
+						<ul>
+							<li>Sometimes Accessibility reports don't flag missing aria attribues.</li>
+							<li>Recommend actually testing items with a screenreader and questioning if the site makes sense or not.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Items to note: P3</h2>
+						<ul>
+							<li>Use Aria to enhance what you have, not to fix what is broken.</li>
+							<li>When building, start with accessibility basics first, and use Aria if items need additional context.</li>
+							<li>If you need some introductions to accessibility concepts: <a href="https://lkopacz.github.io/Introduction-to-Accessibility/#/">I've presented on it</a>.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Questions?</h2>
 				</section>
 			</div>
 		</div>
