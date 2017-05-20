@@ -53,36 +53,37 @@
 				<section>
 					<section>
 						<h2>How can ARIA Help?</h2>
-						<ul>
-							<li>Questions to ask:</li>
-							<ul>
-								<li>Are there hidden elements of my page that rely on Visual Cues to communicate Meaning?</li>
-								<li>Are there categories on a page that need context of what they are categorizing?</li>
-								<li>Are you forced to use <code>&lt;div&gt;'s</code> in your CMS?</li>
-							</ul>
-						</ul>
+					</section>
+					<section>
+						<p>Are there hidden elements of my page that rely on Visual Cues to communicate Meaning?</p>
+						<img src="images/mac-cosmetics.png" />
+					</section>
+					<section>
+						<p>Are there categories on a page that need context of what they are categorizing?</p>
+						<img src="images/regions-menu.png" width="500"/>
+					</section>
+					<section>
+						<p>Are you forced to use <code>&lt;div&gt;'s</code> in your CMS?</p>
+						<img src="images/drupal-divs.png" />
 					</section>
 				</section>
 				<section>
-					<section>
-						<p>Most frequently used ARIA attributes.</p>
-						<span>Source: <a href="https://www.w3.org/TR/wai-aria/states_and_properties">W3C, Full List of ARIA Attributes</a></span>
-					</section>
 					<section>
 						<h2><code>role</code></h2>
 						<ul>
 							<li>Used to describe widgets or structure. Very important in presence of <code>&lt;div&gt;'s</code></li>
 							<li>Popular Values: <code>article, banner, button, form, main, navigation, region</code></li>
-							<li>Full list: <a href="https://www.w3.org/TR/wai-aria/roles#alert">W3 ARIA Roles</a></li>
 						</ul>
 					</section>
 					<section>
-						<h2><code>aria-checked</code></h2>
-						<ul>
-							<li>Indicates the current "checked" state of checkboxes, radio buttons, and other widgets.</li>
-							<li>Values: <code>true, false</code></li>
-						</ul>
+						<h2><code>role</code> example</h2>
+						<video controls="controls" width="600" name="Role Button" src="videos/role.mov"></video>
+						<pre>
+							<code>&lt;a role="button" href="/i/moments" class="js-nav js-tooltip js-dynamic-tooltip" data-component-context="moments_nav" data-nav="moments" data-placement="bottom" data-original-title=""&gt;Moment&lt;/a&gt;</code>
+						</pre>
 					</section>
+				</section>
+				<section>
 					<section>
 						<h2><code>aria-describedby</code></h2>
 						<ul>
@@ -114,6 +115,7 @@
 						</pre>
 					</section>
 				</section>
+				<section>
 					<section>
 						<h2><code>aria-haspopup</code></h2>
 						<ul>
@@ -122,12 +124,33 @@
 						</ul>
 					</section>
 					<section>
+						<h2><code>aria-haspopup</code> example</h2>
+						<video controls="controls" width="600" name="ARIA haspopup demonstration" src="videos/aria-haspopup.mov"></video>
+						<pre>
+							<code>&lt;a href="/settings/account" class="btn js-tooltip settings dropdown-toggle js-dropdown-toggle" id="user-dropdown-toggle" data-placement="bottom" rel="noopener" role="button" aria-haspopup="true" data-original-title="Profile and settings"&gt;Sample Text&lt;/a&gt;</code>
+						</pre>
+					</section>
+				</section>
+				<section>
+					<section>
 						<h2><code>aria-hidden</code></h2>
 						<ul>
 							<li>Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author. Helpful when there are items that impact styling, but have no semantic value.</li>
 							<li>Values: <code>true, false</code></li>
 						</ul>
 					</section>
+					<section>
+						<h2><code>aria-hidden</code> example</h2>
+						<video controls="controls" width="600" name="ARIA Hidden Demonstration" src="videos/aria-hidden.mov"></video>
+						<pre>
+						<code>&lt;span class="text" aria-hidden="true"&gt;Home&lt;/span&gt;
+&lt;span class="u-hiddenVisually a11y-inactive-page-text"&gt;Home&lt;/span&gt;
+&lt;span class="u-hiddenVisually a11y-active-page-text"&gt;Home, current page.&lt;/span&gt;
+&lt;span class="u-hiddenVisually hidden-new-items-text"&gt;New Tweets available.&lt;/span&gt;</code>
+						</pre>
+					</section>
+				</section>
+				<section>
 					<section>
 						<h2><code>aria-label</code></h2>
 						<ul>
@@ -136,16 +159,40 @@
 						</ul>
 					</section>
 					<section>
-						<h2><code>aria-labeledby</code></h2>
+						<h2><code>aria-label</code> example</h2>
+						<img src="images/aria-label.png"/>
+						<pre>
+							<code>&lt;div class="ProfileTweet-actionList js-actions" role="group" aria-label="Tweet actions"&gt; ... &lt;/div&gt;</code>
+						</pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2><code>aria-labelledby</code></h2>
 						<ul>
 							<li>Identifies the element (or elements) that describes the object.</li>
 							<li>Value: String that matches the id of the element used to label it.</li>
 						</ul>
 					</section>
 					<section>
+						<h2><code>aria-labelledby</code> example</h2>
+						<video controls="controls" width="800" height="200" name="Tweet Button" src="videos/aria-labelledby.mov"></video>
+						<pre>
+							<code>&lt;li role="complementary" aria-labelledby="global-new-tweet-button" class="topbar-tweet-btn"&gt;
+&lt;button id="global-new-tweet-button" type="button" class="js-global-new-tweet js-tooltip btn primary-btn tweet-btn js-dynamic-tooltip" data-placement="bottom" data-component-context="new_tweet_button" data-original-title=""&gt;
+&lt;span class="Icon Icon--tweet Icon--large"&gt;&lt;/span&gt;
+&lt;span class="text"&gt;Tweet&lt;/span&gt;
+&lt;/button&gt;
+&lt;/li&gt;</code>
+						</pre>
+					</section>
+				</section>
+				<section>
+					<section>
 						<h2><code>aria-required</code></h2>
 						<ul>
-							<li>Indicates that user input is required on the element before a form may be submitted. Helpful particularly in HTML4 forms.</li>
+							<li>Indicates that user input is required on the element before a form may be submitted.</li>
+							<li>Helpful particularly in HTML4 forms, as HTML5 forms have <code>required</code> attribute.</li>
 							<li>Values: <code>true, false</code></li>
 						</ul>
 					</section>
@@ -154,7 +201,7 @@
 					<section>
 						<h2>Items to note: P1</h2>
 						<ul>
-							<li>HTML5 makes much better use of semantic HTML.</li>
+							<li>HTML5 makes much better use of semantic HTML than HTML4.</li>
 							<li>ARIA can support HTML5, but if you can fix screenreader issues with semantic HTML, do it.</li>
 						</ul>
 					</section>
@@ -175,7 +222,19 @@
 					</section>
 				</section>
 				<section>
-					<h2>Questions?</h2>
+					<section>
+						<h2>Resources:</h2>
+						<ul>
+							<li><a href="http://zufelt.ca/blog/are-you-confused-html5-and-wai-aria-yet">Are You Confused by HTML5 and WAI-ARIA Yet?</li>
+							<li><a href="https://www.sitepoint.com/how-to-use-aria-effectively-with-html5/">How to Use ARIA Effectively with HTML5</a></li>
+							<li><a href="https://www.w3.org/TR/wai-aria/roles#alert">Full List: W3 ARIA Roles</a></li>
+							<li><a href="https://www.nvaccess.org/">NVDA - Free Screen Readers for Windows</a></li>
+							<li><a href="https://www.apple.com/accessibility/mac/vision/">OSX Voiceover</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Questions?</h2>
+					</section>
 				</section>
 			</div>
 		</div>
