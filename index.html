@@ -47,7 +47,13 @@
 					</section>
 					<section>
 						<h2>If yes, another Question</h2>
-						<p>Were you irritated? Did you feel like you got the same context as you did as sighted people?</p>
+						<p>How did you feel? Did you feel like you got the same context as a sighted user? Did you feel confused? Irritated? Happy?</p>
+					</section>
+					<section>
+						<video controls="controls" width="900" name="Twitter Nav Screenreader Runthrough" src="videos/twitter-nav.mov"></video>
+					</section>
+					<section>
+						<video controls="controls" width="900" name="Sephora Screenreader Runthrough" src="videos/sephora-slider_p1.mov"></video>
 					</section>
 				</section>
 				<section>
@@ -55,17 +61,20 @@
 						<h2>How can ARIA Help?</h2>
 					</section>
 					<section>
-						<p>Are there hidden elements of my page that rely on Visual Cues to communicate Meaning?</p>
-						<img src="images/mac-cosmetics.png" />
+						<p>Are there elements of my page that rely on Visual Cues to communicate Meaning?</p>
+						<img src="images/mac-cosmetics.png" alt="Mac Cosmetics Banner with an X"/>
 					</section>
 					<section>
 						<p>Are there categories on a page that need context of what they are categorizing?</p>
-						<img src="images/regions-menu.png" width="500"/>
+						<img src="images/events-menu.png" width="500" alt="Menu with Dates and the top level is a placeholder nonlink"/>
 					</section>
 					<section>
 						<p>Are you forced to use <code>&lt;div&gt;'s</code> in your CMS?</p>
-						<img src="images/drupal-divs.png" />
+						<img src="images/drupal-divs.png" alt="Drupal Markup with lots of divs"/>
 					</section>
+				</section>
+				<section>
+					<h2>Most popular ARIA attributes</h2>
 				</section>
 				<section>
 					<section>
@@ -91,6 +100,48 @@
 							<li>Value: String that matches the id of the element used to describe it.</li>
 						</ul>
 					</section>
+					<section>
+						<h2><code>aria-labelledby</code></h2>
+						<ul>
+							<li>Identifies the element (or elements) that labels the current element.</li>
+							<li>Value: String that matches the id of the element used to label it.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>The subtle difference...</h2>
+						<video controls="controls" width="600" name="Role Button" src="videos/aria-describedby_aria-labelledby.mov"></video>
+					</section>
+					<section>
+						<pre>
+							<code>&lt;p id="additional-label">This is additional label info&lt;/p&gt;
+&lt;form action=""&gt;
+&lt;label for="basic"&gt;Normal Label Example&lt;/label&gt;
+&lt;input id="basic" name="basic"&gt;
+...
+&lt;label for="labelled" id="labelled-label"&gt;Labelled By Example&lt;/label&gt;
+&lt;input id="labelled" name="labelled" aria-labelledby="labelled-label additional-label"&gt;
+...
+&lt;label for="described"&gt;Described By Example&lt;/label&gt;
+&lt;input id="described" name="described" aria-describedby="described-note"&gt;
+&lt;em class="note" id="described-note"&gt;This is a note about the field&lt;/em&gt;
+...
+&lt;label for="labelled-described" id="labelled-described-label"&gt;Labelled By and Described By Example&lt;/label&gt;
+&lt;input id="labelled-described" name="labelled-described" aria-labelledby="labelled-described-label additional-label" aria-describedby="labelled-described-note"&gt;
+&lt;em class="note" id="labelled-described-note"&gt;This is a note about the field&lt;/em&gt;
+&lt;/form&gt;</code>
+						</pre>
+						<div><a href="http://codepen.io/aarongustafson/pen/dmuoe/" style="font-size: 1rem"><em>Source</em>: ARIA Quicktip: Labelledby vs. Describedby</a></div>
+					</section>
+					<!--<section>
+						<h2><code>aria-describedby</code> example</h2>
+						<video controls="controls" width="500" name="Role Button" src="videos/twitter-tweet.mov"></video>
+						<pre>
+							<code>&lt;div class="modal draggable" id="global-tweet-dialog-dialog" role="alertdialog" aria-labelledby="global-tweet-dialog-header" aria-describedby="global-tweet-dialog-body" style="top: 20%; left: 425px;"&gt; ...
+&lt;div class="modal-body modal-tweet" id="global-tweet-dialog-body"&gt; ...
+&lt;/div&gt; ...
+&lt;/div&gt;</code>
+						</pre>
+					</section> -->
 				</section>
 				<section>
 					<section>
@@ -166,14 +217,7 @@
 						</pre>
 					</section>
 				</section>
-				<section>
-					<section>
-						<h2><code>aria-labelledby</code></h2>
-						<ul>
-							<li>Identifies the element (or elements) that describes the object.</li>
-							<li>Value: String that matches the id of the element used to label it.</li>
-						</ul>
-					</section>
+				<!--<section>
 					<section>
 						<h2><code>aria-labelledby</code> example</h2>
 						<video controls="controls" width="800" height="200" name="Tweet Button" src="videos/aria-labelledby.mov"></video>
@@ -186,7 +230,7 @@
 &lt;/li&gt;</code>
 						</pre>
 					</section>
-				</section>
+				</section> -->
 				<section>
 					<section>
 						<h2><code>aria-required</code></h2>
@@ -199,21 +243,21 @@
 				</section>
 				<section>
 					<section>
-						<h2>Items to note: P1</h2>
+						<h2>HTML5 vs. ARIA</h2>
 						<ul>
 							<li>HTML5 makes much better use of semantic HTML than HTML4.</li>
 							<li>ARIA can support HTML5, but if you can fix screenreader issues with semantic HTML, do it.</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Items to note: P2</h2>
+						<h2>Human Testing is Valuable</h2>
 						<ul>
 							<li>Sometimes Accessibility reports don't flag missing ARIA attributes.</li>
 							<li>Recommend actually testing items with a screenreader and questioning if the site makes sense or not.</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Items to note: P3</h2>
+						<h2>Build with Accessibility in Mind</h2>
 						<ul>
 							<li>Use ARIA to enhance what you have, not to fix what is broken.</li>
 							<li>When building, start with accessibility basics first, and use ARIA if items need additional context.</li>
@@ -230,6 +274,7 @@
 							<li><a href="https://www.w3.org/TR/wai-aria/roles#alert">Full List: W3 ARIA Roles</a></li>
 							<li><a href="https://www.nvaccess.org/">NVDA - Free Screen Readers for Windows</a></li>
 							<li><a href="https://www.apple.com/accessibility/mac/vision/">OSX Voiceover</a></li>
+							<li><a href="http://webaim.org/articles/voiceover/">WebAIM - Voiceover Shortcuts</a></li>
 						</ul>
 					</section>
 					<section>
